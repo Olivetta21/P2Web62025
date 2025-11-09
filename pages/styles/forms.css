@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-.login-container {
+.form-container {
     background: white;
     padding: 40px;
     border-radius: 10px;
@@ -49,22 +49,6 @@ input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-.btn-login {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-login:hover {
-    background-color: #0056b3;
 }
 
 .erro {

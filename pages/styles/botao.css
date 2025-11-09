@@ -1,0 +1,26 @@
+.btn {
+    background-color: #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    padding: 12px;
+    color: white;
+}
+
+.btn.login {
+    width: 100%;
+}
+
+.btn.delete {
+    background-color: #dc3545;
+}
+
+.btn.edit {
+    background-color: #28a745;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}

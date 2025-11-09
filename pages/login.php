@@ -40,11 +40,12 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>    
-    <link rel="stylesheet" href="styles/loginform.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/botao.css">
 </head>
 
 <body>
-    <div class="login-container">
+    <div class="form-container">
         <form method="POST">
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -55,7 +56,7 @@ if ($_POST) {
                 <input type="password" id="senha" name="senha" required>
             </div>
 
-            <button type="submit" class="btn-login">Entrar</button>
+            <button type="submit" class="btn login">Entrar</button>
             <a href="cadastrarusuario.php">Faça cadastro aqui</a>.
         </form>
     </div>

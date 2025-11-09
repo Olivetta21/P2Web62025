@@ -36,14 +36,15 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuario</title>
-    <link rel="stylesheet" href="styles/loginform.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/botao.css">
 </head>
 
 <body>
     <?php if ($criadoComSucesso): ?>
         <div class="info">Usuário criado com sucesso! <a href="login.php">Faça login aqui</a>.</div>
     <?php else: ?>
-        <div class="login-container">
+        <div class="form-container">
             <form method="POST">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
@@ -58,7 +59,7 @@ if ($_POST) {
                     <input type="password" id="senha" name="senha" required>
                 </div>
 
-                <button type="submit" class="btn-login">Criar</button>
+                <button type="submit" class="btn login">Criar</button>
             </form>
         </div>
     <?php endif; ?>

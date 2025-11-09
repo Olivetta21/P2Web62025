@@ -18,7 +18,6 @@ if (isset($_GET["id"])) {
         $agendamento = $res["data"][0];
     } else {
         $erro = "Erro ao buscar agendamento.";
-        exit();
     }
 
 }
@@ -55,6 +54,7 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar agendamento</title>    
+    <link rel="stylesheet" href="styles/globalstyles.css">
     <link rel="stylesheet" href="styles/forms.css">
     <link rel="stylesheet" href="styles/botao.css">
 </head>
@@ -62,6 +62,12 @@ if ($_POST) {
 <body>
     <div class="form-container">
         <form method="POST">
+            <h2>Editar Agendamento</h2>
+            <div class="form-group">
+                <?php if (!empty($erro)) : ?>
+                    <div class="error-message"><?php echo $erro; ?></div>
+                <?php endif; ?>
+            </div>
             <div class="form-group">
                 <label for="id">Editando agendamento ID:</label>
                 <input type="text" id="id" name="id" value="<?php echo $agendamento["id"] ?? ""; ?>" readonly>

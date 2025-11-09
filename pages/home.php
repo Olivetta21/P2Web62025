@@ -55,6 +55,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/globalstyles.css">
     <link rel="stylesheet" href="styles/homepage.css">
     <link rel="stylesheet" href="styles/botao.css">
 </head>
@@ -67,6 +68,9 @@
             <a href="?logout=1"> Logoff </a>
         </form>
     </h1>
+    <?php if (!empty($erro)) : ?>
+        <div class="error-message"><?php echo $erro; ?></div>
+    <?php endif; ?>
     <div class="agendamentos-container">
         <?php foreach($agendamentos as $agendamento): ?>
             <div class="agendamento-item">

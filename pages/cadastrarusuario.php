@@ -19,10 +19,10 @@ if ($_POST) {
             if ($resultado["success"]) {
                 $criadoComSucesso = true;
             } else {
-                $erro = "Email ou senha incorretos.";
+                $erro = "Erro ao criar usuário. Tente outro email";
             }
         } catch (\Throwable $th) {
-            $erro = "Email no sistema.";
+            $erro = "erro no sistema.";
         }
     }
 
@@ -36,6 +36,7 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuario</title>
+    <link rel="stylesheet" href="styles/globalstyles.css">
     <link rel="stylesheet" href="styles/forms.css">
     <link rel="stylesheet" href="styles/botao.css">
 </head>
@@ -46,6 +47,12 @@ if ($_POST) {
     <?php else: ?>
         <div class="form-container">
             <form method="POST">
+                <h2>Cadastro de Usuário</h2>
+                <div class="form-group">
+                    <?php if (!empty($erro)) : ?>
+                        <div class="error-message"><?php echo $erro; ?></div>
+                    <?php endif; ?>
+                </div>
                 <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>

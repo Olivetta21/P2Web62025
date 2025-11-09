@@ -13,7 +13,7 @@ if ($_POST) {
     $email = $_POST["email"] ?? "";
     $senha = md5($_POST["senha"]) ?? "";
 
-    if (empty($email) || empty($senha)) {
+    if (empty(trim($email)) || empty(trim($senha))) {
         $erro = "Por favor, preencha todos os campos.";
     } else {
         try {

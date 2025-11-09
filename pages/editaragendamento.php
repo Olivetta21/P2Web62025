@@ -10,7 +10,7 @@ $database = Database::getInstance();
 
 $erro = "";
 $agendamento = null;
-if (isset($_GET["id"])) {
+if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
     $agendamento_id = $_GET["id"];
 
     $res = $database->read("agendamentos", ["id" => $agendamento_id, "usuario_id" => $_SESSION["usuario"]], 1);
@@ -26,7 +26,7 @@ if ($_POST) {
     $data = $_POST["data_hora"] ?? "";
     $descricao = $_POST["descricao"] ?? "";
 
-    if (empty($data) || empty($descricao)) {
+    if (empty(trim($data)) || empty(trim($descricao))) {
         $erro = "Por favor, preencha todos os campos.";
     } else {
         try {
@@ -81,7 +81,7 @@ if ($_POST) {
                 <input type="text" id="descricao" name="descricao" required value="<?php echo $agendamento["descricao"] ?? ""; ?>" required>
             </div>
 
-            <button type="submit" class="btn login">Editar Agendamento</button>
+            <button type="submit" class="btn login">Salvar</button>
         </form>
     </div>
 </body>

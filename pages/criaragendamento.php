@@ -13,7 +13,7 @@ if ($_POST) {
     $data = $_POST["data_hora"] ?? "";
     $descricao = $_POST["descricao"] ?? "";
 
-    if (empty($data) || empty($descricao)) {
+    if (empty(trim($data)) || empty(trim($descricao))) {
         $erro = "Por favor, preencha todos os campos.";
     } else {
         try {
@@ -66,7 +66,7 @@ if ($_POST) {
                 <input type="text" id="descricao" name="descricao" required>
             </div>
 
-            <button type="submit" class="btn login">Criar Agendamento</button>
+            <button type="submit" class="btn login">Criar</button>
         </form>
     </div>
 </body>
